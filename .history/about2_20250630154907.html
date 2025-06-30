@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - DhobiLite</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #2196F3;
+            --primary-blue-dark: #1976D2;
+            --primary-blue-light: #64B5F6;
+            --accent-blue: #03A9F4;
+            --text-dark: #2C3E50;
+            --text-medium: #546E7A;
+            --text-light: #78909C;
+            --bg-white: #FFFFFF;
+            --bg-light: #FAFAFA;
+            --bg-blue-light: #F3F9FF;
+            --shadow-light: 0 2px 12px rgba(33, 150, 243, 0.08);
+            --shadow-medium: 0 8px 32px rgba(33, 150, 243, 0.12);
+            --shadow-heavy: 0 16px 48px rgba(33, 150, 243, 0.15);
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.7;
+            color: var(--text-dark);
+            background-color: var(--bg-white);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 60vh;
+            background: linear-gradient(135deg, var(--bg-blue-light) 0%, rgba(33, 150, 243, 0.05) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(33, 150, 243, 0.03) 0%, transparent 70%);
+            animation: gentle-rotate 30s linear infinite;
+        }
+
+        @keyframes gentle-rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .hero-content {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.85);
+            padding: 3rem 4rem;
+            border-radius: 24px;
+            box-shadow: var(--shadow-medium);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .hero h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 300;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-medium);
+            font-weight: 400;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Main Content */
+        main {
+            padding: 5rem 0;
+        }
+
+        section {
+            margin-bottom: 6rem;
+        }
+
+        .section-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-blue), var(--accent-blue));
+            border-radius: 2px;
+        }
+
+        /* Mission Section */
+        .mission {
+            background: var(--bg-light);
+            padding: 5rem 0;
+            margin: 0 -2rem;
+        }
+
+        .mission-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .mission-text {
+            font-size: 1.2rem;
+            color: var(--text-medium);
+            line-height: 1.8;
+            margin-bottom: 2.5rem;
+        }
+
+        .mission-highlight {
+            background: linear-gradient(135deg, var(--bg-white) 0%, var(--bg-blue-light) 100%);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-light);
+            border-left: 5px solid var(--primary-blue);
+            font-size: 1.1rem;
+            font-style: italic;
+            color: var(--text-dark);
+        }
+
+        /* Founder Section */
+        .founder-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .founder-image-container {
+            position: relative;
+        }
+
+        .founder-image {
+            width: 100%;
+            height: 450px;
+            background: linear-gradient(135deg, var(--bg-blue-light) 0%, rgba(33, 150, 243, 0.1) 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--primary-blue);
+            box-shadow: var(--shadow-medium);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .founder-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, transparent 0%, rgba(33, 150, 243, 0.05) 100%);
+            transition: opacity 0.4s ease;
+        }
+
+        .founder-image:hover {
+            transform: scale(1.05);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .founder-image:hover::before {
+            opacity: 0.8;
+        }
+
+        .founder-content h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+        }
+
+        .founder-role {
+            font-size: 1.1rem;
+            color: var(--primary-blue);
+            font-weight: 500;
+            margin-bottom: 2rem;
+        }
+
+        .founder-bio {
+            font-size: 1.1rem;
+            color: var(--text-medium);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .founder-quote {
+            background: var(--bg-blue-light);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border-left: 4px solid var(--primary-blue);
+            font-style: italic;
+            color: var(--text-dark);
+            position: relative;
+        }
+
+        .founder-quote::before {
+            content: '"';
+            font-size: 3rem;
+            color: var(--primary-blue);
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-family: serif;
+        }
+
+        /* Values Section */
+        .values {
+            background: var(--bg-light);
+            padding: 5rem 0;
+            margin: 0 -2rem;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .value-card {
+            background: var(--bg-white);
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: var(--shadow-light);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(33, 150, 243, 0.08);
+        }
+
+        .value-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-blue), var(--accent-blue));
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .value-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .value-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .value-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 2rem;
+            background: linear-gradient(135deg, var(--primary-blue), var(--accent-blue));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            transition: all 0.4s ease;
+            box-shadow: 0 8px 24px rgba(33, 150, 243, 0.2);
+        }
+
+        .value-card:hover .value-icon {
+            transform: scale(1.1) rotate(10deg);
+            box-shadow: 0 12px 32px rgba(33, 150, 243, 0.3);
+        }
+
+        .value-card h4 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .value-card p {
+            color: var(--text-medium);
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(135deg, var(--text-dark) 0%, #34495e 100%);
+            color: white;
+            padding: 5rem 0;
+            text-align: center;
+            margin: 0 -2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="25" cy="25" r="2" fill="white" opacity="0.05"/><circle cx="75" cy="35" r="1.5" fill="white" opacity="0.05"/><circle cx="45" cy="75" r="1" fill="white" opacity="0.05"/><circle cx="15" cy="65" r="1.2" fill="white" opacity="0.05"/><circle cx="85" cy="15" r="0.8" fill="white" opacity="0.05"/></svg>');
+            animation: gentle-float 25s ease-in-out infinite;
+        }
+
+        @keyframes gentle-float {
+            0%, 100% { transform: translateY(0px) translateX(0px); }
+            25% { transform: translateY(-5px) translateX(2px); }
+            50% { transform: translateY(0px) translateX(-2px); }
+            75% { transform: translateY(5px) translateX(1px); }
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta h2::after {
+            background: white;
+        }
+
+        .cta-text {
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1.2rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            text-decoration: none;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-blue), var(--accent-blue));
+            color: white;
+            box-shadow: 0 8px 24px rgba(33, 150, 243, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 32px rgba(33, 150, 243, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--text-dark);
+            transform: translateY(-3px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+
+            .mission,
+            .values,
+            .cta {
+                margin: 0 -1.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+
+            .hero-content {
+                padding: 2.5rem 2rem;
+            }
+
+            .founder-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+                text-align: center;
+            }
+
+            .founder-image {
+                height: 350px;
+                max-width: 350px;
+                margin: 0 auto;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            .hero {
+                min-height: 50vh;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-content {
+                padding: 2rem 1.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .founder-content h3 {
+                font-size: 1.8rem;
+            }
+
+            .mission,
+            .values,
+            .cta {
+                margin: 0 -1rem;
+            }
+
+            .mission-content,
+            .mission-highlight {
+                padding: 2rem 1.5rem;
+            }
+
+            .value-card {
+                padding: 2.5rem 1.5rem;
+            }
+
+            main {
+                padding: 4rem 0;
+            }
+
+            section {
+                margin-bottom: 4rem;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Focus styles for accessibility */
+        .btn:focus,
+        .value-card:focus {
+            outline: 3px solid var(--primary-blue);
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+<body>
+    <header class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>About Us</h1>
+                <p class="hero-subtitle">Revolutionizing laundry care with modern convenience and uncompromising quality</p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="mission">
+            <div class="container">
+                <div class="mission-content">
+                    <h2 class="section-title">Our Mission</h2>
+                    <p class="mission-text">
+                        At DhobiLite, we're transforming the laundry experience by combining traditional expertise with modern technology. We believe that quality laundry care should be accessible, convenient, and environmentally responsible.
+                    </p>
+                    <div class="mission-highlight">
+                        We're committed to providing premium laundry and dry cleaning services that save you time while delivering exceptional results. Every garment receives personalized attention, ensuring your clothes look and feel their absolute best.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="founder-section">
+            <div class="container">
+                <h2 class="section-title">Meet Our Founder</h2>
+                <div class="founder-grid">
+                    <div class="founder-image-container">
+                        <figure class="founder-image">
+                            <span>👤</span>
+                        </figure>
+                    </div>
+                    <div class="founder-content">
+                        <h3>Rajesh Kumar</h3>
+                        <p class="founder-role">Founder & CEO</p>
+                        <p class="founder-bio">
+                            With over 15 years of experience in the textile and cleaning industry, Rajesh founded DhobiLite to bridge the gap between traditional laundry services and modern convenience. His passion for innovation and commitment to excellence drives our company's vision.
+                        </p>
+                        <div class="founder-quote">
+                            Every garment tells a story, and we're here to keep that story fresh, vibrant, and beautifully maintained. Our customers' trust is the foundation of everything we do.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="values">
+            <div class="container">
+                <h2 class="section-title">Our Core Values</h2>
+                <div class="values-grid">
+                    <article class="value-card" tabindex="0">
+                        <div class="value-icon">🛡️</div>
+                        <h4>Trust</h4>
+                        <p>Your clothes are precious to you, and they're precious to us too. We handle every item with the utmost care and respect your trust in our service.</p>
+                    </article>
+                    <article class="value-card" tabindex="0">
+                        <div class="value-icon">🚀</div>
+                        <h4>Convenience</h4>
+                        <p>Our seamless pickup and delivery service fits perfectly into your busy schedule, bringing professional laundry care right to your doorstep.</p>
+                    </article>
+                    <article class="value-card" tabindex="0">
+                        <div class="value-icon">🌱</div>
+                        <h4>Eco-Friendly</h4>
+                        <p>We use environmentally responsible cleaning methods and biodegradable detergents to protect both your clothes and our planet.</p>
+                    </article>
+                    <article class="value-card" tabindex="0">
+                        <div class="value-icon">⭐</div>
+                        <h4>Quality</h4>
+                        <p>We use premium detergents and advanced cleaning techniques to ensure every item meets our rigorous standards of cleanliness and care.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Ready to Experience the Difference?</h2>
+                    <p class="cta-text">Join thousands of satisfied customers who trust DhobiLite with their most valued garments. Experience convenience without compromise.</p>
+                    <div class="cta-buttons">
+                        <a href="#" class="btn btn-primary">Schedule Pickup</a>
+                        <a href="#" class="btn btn-secondary">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
